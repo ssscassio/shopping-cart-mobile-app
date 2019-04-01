@@ -1,0 +1,74 @@
+{
+  "name": "shopping-cart",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "android:build": "cd android && ./gradlew assembleRelease",
+    "android:install": "react-native run-android --variant=\"Release\"",
+    "android:shake": "$ANDROID_HOME/platform-tools/adb shell input keyevent 82",
+    "ios:install": "react-native run-ios --configuration Release",
+    "project:clean": "rm -Rf $TMPDIR/react-* node_modules && watchman watch-del-all && yarn cache clean && cd android && ./gradlew clean && cd .. && yarn",
+    "prettier:all": "prettier --insert-pragma --write index.js src/**/*.js",
+    "prettier:check": "prettier -l index.js src/**/*.js",
+    "flow": "flow check src/",
+    "lint": "eslint --ext .js src/** ",
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "start:clean": "yarn start --reset-cache",
+    "test": "jest",
+    "test:watch": "yarn test --watch"
+  },
+  "dependencies": {
+    "react": "16.8.3",
+    "react-native": "0.59.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.0",
+    "@babel/runtime": "^7.4.2",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-eslint": "8.2.6",
+    "babel-jest": "^24.5.0",
+    "enzyme": "3.7.0",
+    "enzyme-adapter-react-16": "1.6.0",
+    "enzyme-to-json": "3.3.4",
+    "eslint": "4.19.1",
+    "eslint-config-airbnb": "17.1.0",
+    "eslint-config-prettier": "3.1.0",
+    "eslint-plugin-import": "2.14.0",
+    "eslint-plugin-jsx-a11y": "6.1.2",
+    "eslint-plugin-prettier": "3.0.0",
+    "eslint-plugin-react": "7.11.1",
+    "eslint-plugin-react-native": "3.5.0",
+    "flow-bin": "^0.84.0",
+    "husky": "1.1.2",
+    "jest": "^24.5.0",
+    "lint-staged": "7.3.0",
+    "metro-react-native-babel-preset": "^0.53.1",
+    "prettier": "1.14.3",
+    "react-dom": "16.8.3",
+    "react-test-renderer": "16.8.3"
+  },
+  "jest": {
+    "preset": "react-native",
+    "timers": "fake",
+    "setupTestFrameworkScriptFile": "<rootDir>/jestSetup.js",
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
+    "transform": {
+      "^.+\\.js$": "<rootDir>/node_modules/react-native/jest/preprocessor.js"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write",
+      "yarn lint",
+      "yarn test",
+      "git add"
+    ]
+  },
+  "prettier": {
+    "printWidth": 100,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  }
+}
