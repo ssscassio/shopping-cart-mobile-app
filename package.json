@@ -19,7 +19,12 @@
   },
   "dependencies": {
     "react": "16.8.3",
-    "react-native": "0.59.3"
+    "react-native": "0.59.3",
+    "react-native-gesture-handler": "^1.1.0",
+    "react-native-paper": "^2.15.0",
+    "react-native-vector-icons": "^6.4.2",
+    "react-navigation": "^3.6.1",
+    "react-navigation-material-bottom-tabs": "^1.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.4.0",
@@ -50,7 +55,9 @@
   "jest": {
     "preset": "react-native",
     "timers": "fake",
-    "setupTestFrameworkScriptFile": "<rootDir>/jestSetup.js",
+    "setupFilesAfterEnv": [
+      "<rootDir>/jestSetup.js"
+    ],
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
     ],

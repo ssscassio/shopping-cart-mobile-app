@@ -3,11 +3,11 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import App from '..';
+import Cart from '.';
 
-describe('<App />', () => {
+describe('<Cart />', () => {
   test('should render properly', () => {
-    const wrapper = shallow(<App />);
+    const wrapper = shallow(<Cart />);
     expect(wrapper).toMatchSnapshot();
   });
 });
