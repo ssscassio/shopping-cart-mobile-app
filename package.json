@@ -55,7 +55,9 @@
   "jest": {
     "preset": "react-native",
     "timers": "fake",
-    "setupTestFrameworkScriptFile": "<rootDir>/jestSetup.js",
+    "setupFilesAfterEnv": [
+      "<rootDir>/jestSetup.js"
+    ],
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
     ],
