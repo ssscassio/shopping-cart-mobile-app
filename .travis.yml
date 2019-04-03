@@ -2,6 +2,6 @@ jobs:
   include:
     - stage: Test, lint and Flow ✅
       language: node_js
-      node_js: 8.5.0
+      node_js: 11.6.0
       install: yarn
       script: npm run flow && npm run lint && npm run test
