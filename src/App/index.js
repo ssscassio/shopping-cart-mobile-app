@@ -3,7 +3,13 @@
  * @flow
  */
 import React from 'react';
-import Router from './router';
+import { Provider } from 'react-redux';
+import store, { AppWithNavigationState } from './store';
 
-const App = () => <Router />;
+const App = () => (
+  <Provider store={store}>
+    <AppWithNavigationState />
+  </Provider>
+);
+
 export default App;
