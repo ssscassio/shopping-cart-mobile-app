@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<HeaderButton /> should render properly 1`] = `
+<TouchableOpacity
+  activeOpacity={0.8}
+  onPress={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "flexDirection": "row",
+      "justifyContent": "center",
+      "padding": 10,
+    }
+  }
+>
+  <Icon
+    allowFontScaling={false}
+    color="#fff"
+    name="shopping-cart"
+    size={24}
+  />
+  <Badge
+    badgeColor="rgba(249, 200, 34, 1.00)"
+    textColor="#333"
+  />
+</TouchableOpacity>
+`;

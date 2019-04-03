@@ -6,24 +6,13 @@ import React, { Component } from 'react';
 import { View, FlatList } from 'react-native';
 import type { NavigationScreenProps } from 'react-navigation';
 
-import ProductItem from '../../../components/ProductItem';
+import ProductItem from '../../components/ProductItem';
 
-import colors from '../../../config/colors';
 import styles from './styles';
 
 type Props = NavigationScreenProps & {};
 
 class ProductList extends Component<Props> {
-  static navigationOptions = () => ({
-    title: 'Shopping',
-    headerStyle: {
-      backgroundColor: colors.primary,
-    },
-    headerTitleStyle: {
-      color: colors.backgroundLight,
-    },
-  });
-
   navigateToDetails = (item: {
     id: string,
     description: string,
