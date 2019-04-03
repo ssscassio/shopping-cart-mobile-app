@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ProductItem /> should render properly 1`] = `
+<TouchableOpacity
+  activeOpacity={0.2}
+  onPress={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "rgba(245, 245, 246, 1.00)",
+      "elevation": 5,
+      "flex": 1,
+      "flexDirection": "row",
+      "justifyContent": "space-between",
+      "marginHorizontal": 20,
+      "marginVertical": 10,
+      "padding": 10,
+      "shadowColor": "#000",
+      "shadowOffset": Object {
+        "height": 2,
+        "width": 0,
+      },
+      "shadowOpacity": 0.35,
+      "shadowRadius": 3,
+    }
+  }
+>
+  <Image
+    source={
+      Object {
+        "uri": "https://cdn.awsli.com.br/600x700/365/365010/produto/13341816/fe9a59131b.jpg",
+      }
+    }
+    style={
+      Object {
+        "backgroundColor": "rgba(225, 226, 225, 1.00)",
+        "borderColor": "rgba(249, 200, 34, 1.00)",
+        "borderRadius": 5,
+        "borderWidth": 2,
+        "height": 100,
+        "width": 100,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "flexDirection": "column",
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#333",
+          "fontSize": 15,
+          "fontWeight": "bold",
+        }
+      }
+    >
+      Vinho Nederburg Rosé
+    </Text>
+    <Text
+      style={
+        Object {
+          "color": "rgba(114, 171, 65, 1.00)",
+        }
+      }
+    >
+      R$ 200,00
+    </Text>
+  </View>
+</TouchableOpacity>
+`;

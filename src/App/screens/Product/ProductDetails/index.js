@@ -25,8 +25,8 @@ const styles = StyleSheet.create({
 type Props = NavigationScreenProps & {};
 
 class ProductDetails extends Component<Props> {
-  static navigationOptions = () => ({
-    title: 'Product', // TODO: Add product name
+  static navigationOptions = ({ navigation }: Props) => ({
+    title: navigation.getParam('item', 'some default value').title, // TODO: Add product name
     headerStyle: {
       backgroundColor: colors.primary,
     },
@@ -34,9 +34,11 @@ class ProductDetails extends Component<Props> {
   });
 
   render() {
+    const { navigation } = this.props;
+    const { title } = navigation.getParam('item', 'some default value');
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>ProductDetails!</Text>
+        <Text style={styles.welcome}>{title}!</Text>
       </View>
     );
   }
