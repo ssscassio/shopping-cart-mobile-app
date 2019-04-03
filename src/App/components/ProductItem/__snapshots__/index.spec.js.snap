@@ -67,7 +67,7 @@ exports[`<ProductItem /> should render properly 1`] = `
         }
       }
     >
-      R$ 200,00
+      R$ 200,00
     </Text>
   </View>
 </TouchableOpacity>
