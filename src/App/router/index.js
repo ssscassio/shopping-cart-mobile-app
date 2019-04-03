@@ -3,7 +3,6 @@
  * @flow
  */
 import React from 'react';
-import { createAppContainer } from 'react-navigation';
 import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
@@ -47,4 +46,4 @@ const TabNavigation = createMaterialBottomTabNavigator(
   }
 );
 
-export default createAppContainer(TabNavigation);
+export default TabNavigation;
