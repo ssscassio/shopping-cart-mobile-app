@@ -17,3 +17,7 @@ test('Format BRL Currency: 20', () => {
 test('Format BRL Currency: 20.798', () => {
   expect(formatMoney(20.798)).toBe('R$ 20,80');
 });
+
+test('Format BRL Currency: 2000000.798', () => {
+  expect(formatMoney(2000000.798)).toBe('R$ 2.000.000,80');
+});
