@@ -3,7 +3,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import ProductItem from '.';
+import { ProductItem } from '.';
 
 describe('<ProductItem />', () => {
   const wine = {
