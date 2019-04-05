@@ -78,4 +78,16 @@ export default {
     color: colors.ternary,
     flex: 1,
   },
+  closeButton: {
+    position: 'absolute',
+    top: -7,
+    left: -7,
+    width: 20,
+    height: 20,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 10,
+    backgroundColor: colors.secondary,
+    zIndex: 1,
+  },
 };

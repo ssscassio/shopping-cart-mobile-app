@@ -83,35 +83,14 @@ exports[`<ProductItem /> should render properly 1`] = `
       >
         R$ 200,00
       </Text>
-      <TouchableOpacity
-        activeOpacity={0.6}
-        style={
-          Object {
-            "alignItems": "center",
-            "backgroundColor": "rgba(0, 145, 234, 1.00)",
-            "borderRadius": 5,
-            "flexDirection": "row",
-            "paddingHorizontal": 8,
-            "paddingVertical": 5,
-          }
-        }
-      >
-        <Icon
-          allowFontScaling={false}
-          color="rgba(245, 245, 246, 1.00)"
-          name="add-shopping-cart"
-          size={24}
-        />
-        <Text
-          style={
-            Object {
-              "color": "rgba(245, 245, 246, 1.00)",
-            }
-          }
-        >
-          Add to Cart
-        </Text>
-      </TouchableOpacity>
+      <Button
+        iconName="add-shopping-cart"
+        onPress={[Function]}
+        otherProps={Object {}}
+        text="Add to Cart"
+        textColor="#fff"
+        withIcon={true}
+      />
     </View>
   </View>
 </TouchableOpacity>

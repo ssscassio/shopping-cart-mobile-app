@@ -9,19 +9,94 @@ exports[`<Cart /> should render properly 1`] = `
     }
   }
 >
-  <FlatList
-    disableVirtualization={false}
-    horizontal={false}
-    initialNumToRender={10}
-    keyExtractor={[Function]}
-    maxToRenderPerBatch={10}
-    numColumns={1}
-    onEndReachedThreshold={2}
-    removeClippedSubviews={false}
-    renderItem={[Function]}
-    scrollEventThrottle={50}
-    updateCellsBatchingPeriod={50}
-    windowSize={21}
-  />
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flex": 1,
+        "justifyContent": "center",
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "rgba(114, 171, 65, 1.00)",
+          "fontSize": 20,
+          "fontWeight": "bold",
+        }
+      }
+    >
+      Your Cart is Empty!
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "flex-end",
+        "alignSelf": "flex-end",
+        "backgroundColor": "rgba(245, 245, 246, 1.00)",
+        "flexDirection": "row",
+        "paddingBottom": 50,
+        "paddingHorizontal": 20,
+        "paddingVertical": 15,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "flex": 1.5,
+          "flexDirection": "column",
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "rgba(59, 129, 181, 1.00)",
+          }
+        }
+      >
+        (
+        0
+         
+        items
+        )
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "#444",
+            "fontSize": 17,
+            "fontWeight": "bold",
+          }
+        }
+      >
+        Total: 
+        <Text
+          style={
+            Object {
+              "color": "rgba(114, 171, 65, 1.00)",
+              "fontSize": 17,
+              "fontWeight": "bold",
+            }
+          }
+        >
+          R$ 200,00
+        </Text>
+      </Text>
+    </View>
+    <Button
+      color="rgba(245, 245, 246, 1.00)"
+      disabled={true}
+      iconName="add-shopping-cart"
+      onPress={[Function]}
+      otherProps={Object {}}
+      text="Checkout"
+      textColor="#fff"
+      withIcon={false}
+    />
+  </View>
 </View>
 `;

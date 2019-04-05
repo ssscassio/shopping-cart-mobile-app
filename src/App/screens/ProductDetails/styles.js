@@ -76,6 +76,7 @@ export default {
     alignSelf: 'flex-end',
   },
   footBar: {
+    backgroundColor: colors.backgroundLight,
     flexDirection: 'row',
     alignItems: 'flex-end',
     alignSelf: 'flex-end',
@@ -92,19 +93,5 @@ export default {
   buttonsContainer: {
     flexDirection: 'column',
     flex: 3,
-  },
-  button: {
-    backgroundColor: colors.buttonColor,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingVertical: 5,
-    paddingHorizontal: 10,
-    borderRadius: 5,
-    flex: 1,
-  },
-  buttonText: {
-    fontSize: 17,
-    color: colors.backgroundLight,
   },
 };

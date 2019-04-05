@@ -10,7 +10,19 @@ import formatCurrency from '../../util';
 import styles from './styles';
 import colors from '../../config/colors';
 
-// TODO: const CloseButton = () => {};
+type CloseButtonProps = {
+  onPress: () => mixed,
+};
+const CloseButton = ({ onPress }: CloseButtonProps) => (
+  <TouchableOpacity
+    hitSlop={{ top: 10, left: 10, right: 10, bottom: 10 }}
+    activeOpacity={0.6}
+    onPress={onPress}
+    style={styles.closeButton}
+  >
+    <Icon name="close" size={15} color={colors.backgroundLight} />
+  </TouchableOpacity>
+);
 
 type Props = {
   item: {
@@ -30,6 +42,11 @@ const ProductItem = (props: Props) => {
   } = props;
   return (
     <View style={styles.container}>
+      <CloseButton
+        onPress={() => {
+          /** TODO: */
+        }}
+      />
       <View style={styles.pictureContainer}>
         <Image style={styles.picture} source={{ uri: picture }} />
       </View>
