@@ -130,6 +130,7 @@ exports[`<ProductDetails /> should render properly 1`] = `
           <Button
             iconName="add-shopping-cart"
             onPress={[Function]}
+            otherProps={Object {}}
             text="Add to Cart"
             textColor="#fff"
             withIcon={true}
@@ -143,6 +144,7 @@ exports[`<ProductDetails /> should render properly 1`] = `
       Object {
         "alignItems": "flex-end",
         "alignSelf": "flex-end",
+        "backgroundColor": "rgba(245, 245, 246, 1.00)",
         "flexDirection": "row",
         "paddingBottom": 50,
         "paddingHorizontal": 20,
@@ -166,6 +168,7 @@ exports[`<ProductDetails /> should render properly 1`] = `
       color="rgba(245, 245, 246, 1.00)"
       iconName="add-shopping-cart"
       onPress={[Function]}
+      otherProps={Object {}}
       text="Buy Now"
       textColor="#fff"
       withIcon={false}

@@ -4,8 +4,8 @@
  */
 import React from 'react';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialIcons';
 
+import Button from '../Button';
 import formatCurrency from '../../util';
 import styles from './styles';
 
@@ -44,10 +44,7 @@ const ProductItem = (props: Props) => {
         <Text style={styles.productTitle}>{title}</Text>
         <View style={styles.priceContainer}>
           <Text style={styles.productPrice}>{formatCurrency(price)}</Text>
-          <TouchableOpacity activeOpacity={0.6} style={styles.addButtonContainer}>
-            <Icon name="add-shopping-cart" size={24} color={styles.addButtonText.color} />
-            <Text style={styles.addButtonText}>Add to Cart</Text>
-          </TouchableOpacity>
+          <Button withIcon iconName="add-shopping-cart" text="Add to Cart" onPress={() => {}} />
         </View>
       </View>
     </TouchableOpacity>

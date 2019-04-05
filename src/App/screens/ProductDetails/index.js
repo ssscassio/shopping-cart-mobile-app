@@ -3,32 +3,13 @@
  * @flow
  */
 import React from 'react';
-import { View, Text, Image, ScrollView, TouchableOpacity } from 'react-native';
+import { View, Text, Image, ScrollView } from 'react-native';
 import { NavigationScreenProps } from 'react-navigation';
-import Icon from 'react-native-vector-icons/MaterialIcons';
 
+import Button from '../../components/Button';
 import colors from '../../config/colors';
 import styles from './styles';
 import formatPrice from '../../util';
-
-type ButtonProps = {
-  withIcon?: boolean,
-  iconName?: string,
-  text: string,
-  textColor?: string,
-  onPress: () => mixed,
-};
-const Button = ({ withIcon, iconName, text, textColor, onPress }: ButtonProps) => (
-  <TouchableOpacity activeOpacity={0.6} onPress={onPress} style={styles.button}>
-    {withIcon && <Icon name={iconName} size={24} color={textColor} />}
-    <Text style={styles.buttonText}>{text}</Text>
-  </TouchableOpacity>
-);
-Button.defaultProps = {
-  withIcon: false,
-  iconName: 'add-shopping-cart',
-  textColor: '#fff',
-};
 
 type Props = NavigationScreenProps & {};
 const ProductDetails = (props: Props) => {

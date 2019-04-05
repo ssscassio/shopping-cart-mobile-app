@@ -7,7 +7,7 @@ import { Cart } from '.';
 
 describe('<Cart />', () => {
   test('should render properly', () => {
-    const wrapper = shallow(<Cart />);
+    const wrapper = shallow(<Cart items={[]} itemsCount={0} total={200} />);
     expect(wrapper).toMatchSnapshot();
   });
 });
