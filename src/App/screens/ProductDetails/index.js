@@ -3,18 +3,24 @@
  * @flow
  */
 import React from 'react';
+import { connect } from 'react-redux';
 import { View, Text, Image, ScrollView } from 'react-native';
 import { NavigationScreenProps } from 'react-navigation';
 
+import type { itemType } from '../../flow/types';
+import { addOneItem } from '../../store/actions';
 import Button from '../../components/Button';
 import colors from '../../config/colors';
 import styles from './styles';
 import formatPrice from '../../util';
 
-type Props = NavigationScreenProps & {};
+type Props = NavigationScreenProps & {
+  addOne: (item: itemType) => mixed,
+};
 const ProductDetails = (props: Props) => {
-  const { navigation } = props;
-  const { title, picture, description, price } = navigation.getParam('item', 'some default value');
+  const { navigation, addOne } = props;
+  const item = navigation.getParam('item', 'some default value');
+  const { title, picture, description, price } = item;
   return (
     <View style={styles.containerWrapper}>
       <ScrollView style={styles.container}>
@@ -29,13 +35,7 @@ const ProductDetails = (props: Props) => {
             <Text style={styles.description}>{description}</Text>
             <View style={styles.bottomContainer}>
               <Text style={styles.price}>{formatPrice(price)}</Text>
-              <Button
-                withIcon
-                text="Add to Cart"
-                onPress={() => {
-                  /** TODO: */
-                }}
-              />
+              <Button withIcon text="Add to Cart" onPress={() => addOne(item)} />
             </View>
           </View>
         </View>
@@ -46,7 +46,8 @@ const ProductDetails = (props: Props) => {
           text="Buy Now"
           color={colors.backgroundLight}
           onPress={() => {
-            /** TODO: */
+            addOneItem(item);
+            navigation.navigate('Cart');
           }}
         />
       </View>
@@ -54,4 +55,13 @@ const ProductDetails = (props: Props) => {
   );
 };
 
-export default ProductDetails;
+const mapDispatchToProps = dispatch => ({
+  addOne: item => dispatch(addOneItem(item)),
+});
+
+export { ProductDetails };
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(ProductDetails);
