@@ -16,6 +16,7 @@ export default {
     alignItems: 'center',
     marginTop: 15,
     marginHorizontal: 15,
+    marginBottom: 5,
     backgroundColor: colors.backgroundLight,
     flex: 1,
     flexDirection: 'row',
