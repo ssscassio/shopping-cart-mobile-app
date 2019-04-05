@@ -4,6 +4,7 @@
  */
 import React from 'react';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import formatCurrency from '../../util';
 import styles from './styles';
@@ -13,7 +14,7 @@ type Props = {
     id: string,
     description: string,
     value: number,
-    qtd: number,
+    available: number,
     picture: string,
     title: string,
   }) => void,
@@ -21,7 +22,7 @@ type Props = {
     id: string,
     description: string,
     value: number,
-    qtd: number,
+    available: number,
     picture: string,
     title: string,
   },
@@ -37,7 +38,13 @@ const ProductItem = (props: Props) => {
       <Image style={styles.picture} source={{ uri: picture }} />
       <View style={styles.rightContainer}>
         <Text style={styles.productTitle}>{title}</Text>
-        <Text style={styles.productPrice}>{formatCurrency(value)}</Text>
+        <View style={styles.priceContainer}>
+          <Text style={styles.productPrice}>{formatCurrency(value)}</Text>
+          <TouchableOpacity style={styles.addButtonContainer}>
+            <Icon name="add-shopping-cart" size={24} color={styles.addButtonText.color} />
+            <Text style={styles.addButtonText}>Add to Cart</Text>
+          </TouchableOpacity>
+        </View>
       </View>
     </TouchableOpacity>
   );

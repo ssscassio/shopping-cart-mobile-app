@@ -5,9 +5,4 @@ export default {
     backgroundColor: colors.background,
     flex: 1,
   },
-  welcome: {
-    fontSize: 20,
-    margin: 10,
-    textAlign: 'center',
-  },
 };
