@@ -13,7 +13,7 @@ type Props = {
   navigate: (item: {
     id: string,
     description: string,
-    value: number,
+    price: number,
     available: number,
     picture: string,
     title: string,
@@ -21,7 +21,7 @@ type Props = {
   item: {
     id: string,
     description: string,
-    value: number,
+    price: number,
     available: number,
     picture: string,
     title: string,
@@ -31,16 +31,20 @@ type Props = {
 const ProductItem = (props: Props) => {
   const { navigate } = props;
   const {
-    item: { picture, value, title },
+    item: { picture, price, title },
   } = props;
   return (
-    <TouchableOpacity onPress={() => navigate(props.item)} style={styles.container}>
+    <TouchableOpacity
+      activeOpacity={0.6}
+      onPress={() => navigate(props.item)}
+      style={styles.container}
+    >
       <Image style={styles.picture} source={{ uri: picture }} />
       <View style={styles.rightContainer}>
         <Text style={styles.productTitle}>{title}</Text>
         <View style={styles.priceContainer}>
-          <Text style={styles.productPrice}>{formatCurrency(value)}</Text>
-          <TouchableOpacity style={styles.addButtonContainer}>
+          <Text style={styles.productPrice}>{formatCurrency(price)}</Text>
+          <TouchableOpacity activeOpacity={0.6} style={styles.addButtonContainer}>
             <Icon name="add-shopping-cart" size={24} color={styles.addButtonText.color} />
             <Text style={styles.addButtonText}>Add to Cart</Text>
           </TouchableOpacity>

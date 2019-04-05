@@ -27,7 +27,7 @@ export default {
     flex: 2,
     backgroundColor: colors.background,
     borderWidth: 2,
-    borderColor: colors.secondary,
+    borderColor: colors.background,
   },
   rightContainer: {
     flex: 3,

@@ -3,7 +3,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import Cart from '.';
+import { Cart } from '.';
 
 describe('<Cart />', () => {
   test('should render properly', () => {

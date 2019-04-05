@@ -3,6 +3,7 @@
  * @flow
  */
 import React from 'react';
+import { StatusBar, Platform } from 'react-native';
 import { createStackNavigator } from 'react-navigation';
 
 import CartScreen from './screens/Cart';
@@ -65,5 +66,7 @@ const Navigation = createStackNavigator(
     headerMode: 'float',
   }
 );
+
+if (Platform.OS === 'android') StatusBar.setBackgroundColor(colors.statusBar);
 
 export default Navigation;

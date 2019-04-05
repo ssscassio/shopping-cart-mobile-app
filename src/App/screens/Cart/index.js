@@ -12,7 +12,7 @@ import styles from './styles';
 const keyExtractor = (item: {
   id: string,
   description: string,
-  value: number,
+  price: number,
   qtd: number,
   available: number,
   picture: string,
@@ -36,4 +36,5 @@ const mapStateToProps = state => ({
   items: Object.values(state.cart.items),
 });
 
+export { Cart };
 export default connect(mapStateToProps)(Cart);
