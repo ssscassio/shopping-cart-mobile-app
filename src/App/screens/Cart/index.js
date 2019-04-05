@@ -3,27 +3,37 @@
  * @flow
  */
 import React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
-import colors from '../../config/colors';
+import { View, FlatList } from 'react-native';
+import { connect } from 'react-redux';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: colors.background,
-  },
-  welcome: {
-    fontSize: 20,
-    margin: 10,
-    textAlign: 'center',
-  },
-});
+import CartItem from '../../components/CartItem';
+import styles from './styles';
 
-const Cart = () => (
+const keyExtractor = (item: {
+  id: string,
+  description: string,
+  value: number,
+  qtd: number,
+  available: number,
+  picture: string,
+  title: string,
+}): string => item.id;
+
+type Props = {
+  items: Array<{}>,
+};
+const Cart = ({ items }: Props) => (
   <View style={styles.container}>
-    <Text style={styles.welcome}>Cart!</Text>
+    <FlatList
+      data={items}
+      keyExtractor={keyExtractor}
+      renderItem={({ item }) => <CartItem item={item} key={item.id} />}
+    />
   </View>
 );
 
-export default Cart;
+const mapStateToProps = state => ({
+  items: Object.values(state.cart.items),
+});
+
+export default connect(mapStateToProps)(Cart);
