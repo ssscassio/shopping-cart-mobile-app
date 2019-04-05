@@ -3,9 +3,11 @@
  * @flow
  */
 import React from 'react';
-import { View, Text, Image, TouchableOpacity } from 'react-native';
+import { connect } from 'react-redux';
+import { View, Text, Image, TouchableOpacity, Alert } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-
+import type { itemType } from '../../flow/types';
+import { addOneItem, removeOneItem, removeFromCart } from '../../store/actions';
 import formatCurrency from '../../util';
 import styles from './styles';
 import colors from '../../config/colors';
@@ -25,26 +27,33 @@ const CloseButton = ({ onPress }: CloseButtonProps) => (
 );
 
 type Props = {
-  item: {
-    id: string,
-    description: string,
-    price: number,
-    onCart: number,
-    available: number,
-    picture: string,
-    title: string,
-  },
+  item: itemType,
+  addOne: (item: itemType) => mixed,
+  removeOne: (item: itemType) => mixed,
+  removeItem: (id: string) => mixed,
 };
 
-const ProductItem = (props: Props) => {
+const CartItem = (props: Props) => {
+  const { item, addOne, removeOne, removeItem } = props;
   const {
-    item: { picture, price, title, onCart },
+    item: { picture, price, title, onCart, id },
   } = props;
   return (
     <View style={styles.container}>
       <CloseButton
         onPress={() => {
-          /** TODO: */
+          Alert.alert('Remove Item', 'Are you sure you want to remove this item?', [
+            {
+              text: 'Cancel',
+              style: 'cancel',
+            },
+            {
+              text: 'OK',
+              onPress: () => {
+                removeItem(id);
+              },
+            },
+          ]);
         }}
       />
       <View style={styles.pictureContainer}>
@@ -67,11 +76,17 @@ const ProductItem = (props: Props) => {
             </View>
           </View>
           <View style={styles.buttonsContainer}>
-            <TouchableOpacity style={styles.quantityButton}>
+            <TouchableOpacity style={styles.quantityButton} onPress={() => addOne(item)}>
               <Icon name="expand-less" size={30} color={colors.buttonColor} />
             </TouchableOpacity>
             <Text style={styles.quantity}>{onCart}</Text>
-            <TouchableOpacity style={styles.quantityButton}>
+            <TouchableOpacity
+              disabled={onCart === 1}
+              style={styles.quantityButton}
+              onPress={() => {
+                removeOne(item);
+              }}
+            >
               <Icon name="expand-more" size={30} color={colors.buttonColor} />
             </TouchableOpacity>
           </View>
@@ -81,4 +96,14 @@ const ProductItem = (props: Props) => {
   );
 };
 
-export default ProductItem;
+const mapDispatchToProps = dispatch => ({
+  addOne: item => dispatch(addOneItem(item)),
+  removeOne: item => dispatch(removeOneItem(item)),
+  removeItem: id => dispatch(removeFromCart(id)),
+});
+
+export { CartItem };
+export default connect(
+  null,
+  mapDispatchToProps
+)(CartItem);
