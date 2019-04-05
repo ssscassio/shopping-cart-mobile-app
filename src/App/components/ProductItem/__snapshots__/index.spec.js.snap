@@ -2,26 +2,25 @@
 
 exports[`<ProductItem /> should render properly 1`] = `
 <TouchableOpacity
-  activeOpacity={0.2}
+  activeOpacity={0.6}
   onPress={[Function]}
   style={
     Object {
       "alignItems": "center",
       "backgroundColor": "rgba(245, 245, 246, 1.00)",
-      "elevation": 5,
+      "elevation": 3,
       "flex": 1,
       "flexDirection": "row",
       "justifyContent": "space-between",
-      "marginHorizontal": 20,
+      "marginHorizontal": 0,
       "marginVertical": 10,
-      "padding": 10,
       "shadowColor": "#000",
       "shadowOffset": Object {
-        "height": 2,
+        "height": 1,
         "width": 0,
       },
       "shadowOpacity": 0.35,
-      "shadowRadius": 3,
+      "shadowRadius": 2,
     }
   }
 >
@@ -34,18 +33,20 @@ exports[`<ProductItem /> should render properly 1`] = `
     style={
       Object {
         "backgroundColor": "rgba(225, 226, 225, 1.00)",
-        "borderColor": "rgba(249, 200, 34, 1.00)",
-        "borderRadius": 5,
+        "borderColor": "rgba(225, 226, 225, 1.00)",
         "borderWidth": 2,
-        "height": 100,
-        "width": 100,
+        "flex": 2,
+        "height": 110,
       }
     }
   />
   <View
     style={
       Object {
+        "flex": 3,
         "flexDirection": "column",
+        "justifyContent": "space-between",
+        "padding": 10,
       }
     }
   >
@@ -53,22 +54,44 @@ exports[`<ProductItem /> should render properly 1`] = `
       style={
         Object {
           "color": "#333",
+          "flex": 1,
           "fontSize": 15,
           "fontWeight": "bold",
+          "textAlign": "center",
         }
       }
     >
       Vinho Nederburg Rosé
     </Text>
-    <Text
+    <View
       style={
         Object {
-          "color": "rgba(114, 171, 65, 1.00)",
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "space-around",
         }
       }
     >
-      R$ 200,00
-    </Text>
+      <Text
+        style={
+          Object {
+            "color": "rgba(114, 171, 65, 1.00)",
+            "flex": 1,
+            "fontSize": 16,
+          }
+        }
+      >
+        R$ 200,00
+      </Text>
+      <Button
+        iconName="add-shopping-cart"
+        onPress={[Function]}
+        otherProps={Object {}}
+        text="Add to Cart"
+        textColor="#fff"
+        withIcon={true}
+      />
+    </View>
   </View>
 </TouchableOpacity>
 `;

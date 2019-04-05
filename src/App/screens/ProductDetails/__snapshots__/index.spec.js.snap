@@ -4,24 +4,175 @@ exports[`<ProductDetails /> should render properly 1`] = `
 <View
   style={
     Object {
-      "alignItems": "center",
-      "backgroundColor": "rgba(225, 226, 225, 1.00)",
       "flex": 1,
-      "justifyContent": "center",
+      "flexDirection": "column",
     }
   }
 >
-  <Text
+  <ScrollViewMock
     style={
       Object {
-        "fontSize": 20,
-        "margin": 10,
-        "textAlign": "center",
+        "backgroundColor": "rgba(225, 226, 225, 1.00)",
+        "flex": 1,
+        "flexDirection": "column",
       }
     }
   >
-    Vinho Nederburg Rosé
-    !
-  </Text>
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgba(114, 171, 65, 1.00)",
+          "flexDirection": "row",
+          "height": 150,
+          "marginVertical": 70,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "borderColor": "rgba(114, 171, 65, 1.00)",
+            "borderRadius": 5,
+            "elevation": 5,
+            "flex": 1,
+            "height": 190,
+            "marginHorizontal": 30,
+            "shadowColor": "#000",
+            "shadowOffset": Object {
+              "height": 1,
+              "width": 0,
+            },
+            "shadowOpacity": 0.35,
+            "shadowRadius": 2,
+            "top": -20,
+          }
+        }
+      >
+        <Image
+          source={
+            Object {
+              "uri": "https://cdn.awsli.com.br/600x700/365/365010/produto/13341816/fe9a59131b.jpg",
+            }
+          }
+          style={
+            Object {
+              "flex": 1,
+              "height": 190,
+            }
+          }
+        />
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "flex": 1,
+          "marginBottom": 50,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "backgroundColor": "rgba(245, 245, 246, 1.00)",
+            "borderRadius": 2,
+            "marginHorizontal": 30,
+            "padding": 15,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#333",
+              "fontSize": 20,
+              "fontWeight": "bold",
+              "margin": 10,
+              "textAlign": "center",
+            }
+          }
+        >
+          Vinho Nederburg Rosé
+        </Text>
+        <Text
+          style={
+            Object {
+              "color": "#555",
+              "marginVertical": 10,
+              "textAlign": "justify",
+            }
+          }
+        >
+          Análise Sensorial: 
+ Análise Visual: cor rosa com reflexos alaranjados. Análise Olfativa: Frutas vermelhas (morango) Análise Gustativa: seco, corpo médio, excelente acidez, taninos de boa qualidade, com retro-olfato de frutas.
+        </Text>
+        <View
+          style={
+            Object {
+              "alignItems": "flex-end",
+              "alignSelf": "flex-end",
+              "flexDirection": "row",
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "rgba(114, 171, 65, 1.00)",
+                "flex": 1.5,
+                "fontSize": 17,
+                "fontWeight": "bold",
+              }
+            }
+          >
+            R$ 200,00
+          </Text>
+          <Button
+            iconName="add-shopping-cart"
+            onPress={[Function]}
+            otherProps={Object {}}
+            text="Add to Cart"
+            textColor="#fff"
+            withIcon={true}
+          />
+        </View>
+      </View>
+    </View>
+  </ScrollViewMock>
+  <View
+    style={
+      Object {
+        "alignItems": "flex-end",
+        "alignSelf": "flex-end",
+        "backgroundColor": "rgba(245, 245, 246, 1.00)",
+        "flexDirection": "row",
+        "paddingBottom": 50,
+        "paddingHorizontal": 20,
+        "paddingVertical": 15,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "rgba(114, 171, 65, 1.00)",
+          "flex": 1.5,
+          "fontSize": 17,
+          "fontWeight": "bold",
+        }
+      }
+    >
+      R$ 200,00
+    </Text>
+    <Button
+      color="rgba(245, 245, 246, 1.00)"
+      iconName="add-shopping-cart"
+      onPress={[Function]}
+      otherProps={Object {}}
+      text="Buy Now"
+      textColor="#fff"
+      withIcon={false}
+    />
+  </View>
 </View>
 `;

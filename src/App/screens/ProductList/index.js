@@ -16,8 +16,8 @@ class ProductList extends Component<Props> {
   navigateToDetails = (item: {
     id: string,
     description: string,
-    value: number,
-    qtd: number,
+    price: number,
+    available: number,
     picture: string,
     title: string,
   }) => {
@@ -28,8 +28,8 @@ class ProductList extends Component<Props> {
   _keyExtractor = (item: {
     id: string,
     description: string,
-    value: number,
-    qtd: number,
+    price: number,
+    available: number,
     picture: string,
     title: string,
   }): string => item.id;
@@ -40,9 +40,9 @@ class ProductList extends Component<Props> {
       id: 'a',
       description:
         'Análise Sensorial: \n Análise Visual: cor rosa com reflexos alaranjados. Análise Olfativa: Frutas vermelhas (morango) Análise Gustativa: seco, corpo médio, excelente acidez, taninos de boa qualidade, com retro-olfato de frutas.',
-      value: 200,
-      qtd: 20,
-      picture: 'https://cdn.awsli.com.br/600x700/365/365010/produto/13341816/fe9a59131b.jpg',
+      price: 200,
+      available: 20,
+      picture: 'https://winepedia.com.br/wp-content/uploads/2018/03/A%C3%A7%C3%BAcar-1180x517.jpg',
       title: 'Vinho Nederburg Rosé',
     };
     const products = [
