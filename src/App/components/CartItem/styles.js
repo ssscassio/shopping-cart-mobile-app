@@ -30,7 +30,18 @@ export default {
     width: 110,
     backgroundColor: colors.background,
     borderWidth: 2,
-    borderColor: colors.secondary,
+    borderColor: colors.background,
+  },
+  leftContainer: {
+    flexDirection: 'column',
+    flex: 1,
+  },
+  content: {
+    flexDirection: 'row',
+  },
+  titleContainer: {
+    flex: 1,
+    justifyContent: 'center',
   },
   middleContainer: {
     flex: 2,
@@ -56,11 +67,15 @@ export default {
   },
   moneyContainer: {
     flexDirection: 'column',
+    justifyContent: 'space-between',
+    flex: 1,
   },
   price: {
     color: colors.primary,
+    flex: 1,
   },
   total: {
-    color: colors.primary,
+    color: colors.ternary,
+    flex: 1,
   },
 };

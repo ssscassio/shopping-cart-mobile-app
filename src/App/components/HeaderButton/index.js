@@ -26,10 +26,10 @@ const Badge = ({ badgeCount = 0, badgeColor = '#fff', textColor = '#333' }: badg
 );
 
 type totalPropTypes = {
-  value: number,
+  price: number,
 };
-const Total = ({ value = 0 }: totalPropTypes) => (
-  <Text style={styles.totalText}>{formatMoney(value)}</Text>
+const Total = ({ price = 0 }: totalPropTypes) => (
+  <Text style={styles.totalText}>{formatMoney(price)}</Text>
 );
 
 type HeaderPropTypes = {
@@ -37,15 +37,15 @@ type HeaderPropTypes = {
   iconName: string,
   tintColor: string,
   badge: number,
-  totalValue: number,
+  totalPrice: number,
   showTotal: boolean,
 };
 
 const HeaderButton = (props: HeaderPropTypes) => {
-  const { onPress, iconName, tintColor, badge, totalValue, showTotal } = props;
+  const { onPress, iconName, tintColor, badge, totalPrice, showTotal } = props;
   return (
     <TouchableOpacity activeOpacity={0.8} style={styles.container} onPress={() => onPress()}>
-      {showTotal && <Total value={totalValue} />}
+      {showTotal && <Total price={totalPrice} />}
       {IconGenerator(iconName, tintColor)}
       {badge !== 0 && <Badge badgeCount={badge} badgeColor={colors.secondary} textColor="#333" />}
     </TouchableOpacity>
@@ -54,7 +54,7 @@ const HeaderButton = (props: HeaderPropTypes) => {
 
 const mapStateToProps = state => ({
   badge: state.cart.itens_count,
-  totalValue: state.cart.total_value,
+  totalPrice: state.cart.total_price,
 });
 
 export { Badge, Total, HeaderButton };
