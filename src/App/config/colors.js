@@ -1,3 +1,7 @@
+/**
+ * @format
+ * @flow
+ * */
 export default {
   statusBar: 'rgba(66, 104, 33, 1)',
   primary: 'rgba(114, 171, 65, 1.00)',

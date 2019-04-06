@@ -21,6 +21,7 @@ exports[`<HeaderButton /> should render properly 1`] = `
   />
   <Badge
     badgeColor="rgba(249, 200, 34, 1.00)"
+    badgeCount={5}
     textColor="#333"
   />
 </TouchableOpacity>

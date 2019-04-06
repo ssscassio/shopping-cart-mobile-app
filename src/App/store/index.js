@@ -12,8 +12,6 @@ import {
 } from 'react-navigation-redux-helpers';
 import AppNavigator from '../router';
 
-// import new redux helpers
-
 import appReducer from './reducers';
 
 const middleware = createReactNavigationReduxMiddleware(state => state.nav);

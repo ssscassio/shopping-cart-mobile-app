@@ -56,7 +56,7 @@ const confirmModal = (removeItem: (id: string) => void, id: string) => {
 const CartItem = (props: CartItemProps) => {
   const { item, addOne, removeOne, removeItem } = props;
   const {
-    item: { picture, price, title, onCart = 0, id },
+    item: { picture, price, title, onCart, id },
   } = props;
   return (
     <View style={styles.container}>
@@ -76,7 +76,7 @@ const CartItem = (props: CartItemProps) => {
               <Text style={styles.price}>{formatCurrency(price)}</Text>
               <Text style={styles.total}>
                 <Text style={styles.productTitle}>Total: </Text>
-                {formatCurrency(price * onCart)}
+                {formatCurrency(price * (onCart || 0))}
               </Text>
             </View>
           </View>

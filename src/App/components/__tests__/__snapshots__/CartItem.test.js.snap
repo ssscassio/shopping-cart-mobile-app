@@ -1,0 +1,197 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CartItem /> should render properly 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "rgba(245, 245, 246, 1.00)",
+      "elevation": 3,
+      "flex": 1,
+      "flexDirection": "row",
+      "justifyContent": "space-between",
+      "marginBottom": 5,
+      "marginHorizontal": 15,
+      "marginTop": 15,
+      "shadowColor": "#000",
+      "shadowOffset": Object {
+        "height": 1,
+        "width": 0,
+      },
+      "shadowOpacity": 0.35,
+      "shadowRadius": 2,
+    }
+  }
+>
+  <CloseButton
+    onPress={[Function]}
+  />
+  <View
+    style={
+      Object {
+        "padding": 10,
+      }
+    }
+  >
+    <Image
+      source={
+        Object {
+          "uri": "https://cdn.awsli.com.br/600x700/365/365010/produto/13341816/fe9a59131b.jpg",
+        }
+      }
+      style={
+        Object {
+          "backgroundColor": "rgba(225, 226, 225, 1.00)",
+          "borderColor": "rgba(225, 226, 225, 1.00)",
+          "borderWidth": 2,
+          "height": 110,
+          "width": 110,
+        }
+      }
+    />
+  </View>
+  <View
+    style={
+      Object {
+        "flex": 1,
+        "flexDirection": "column",
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "flex": 1,
+          "justifyContent": "center",
+        }
+      }
+    >
+      <Text
+        ellipsizeMode="tail"
+        numberOfLines={1}
+        style={
+          Object {
+            "color": "#333",
+            "fontSize": 17,
+            "fontWeight": "bold",
+          }
+        }
+      >
+        Vinho Nederburg Rosé
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "flexDirection": "row",
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "flex": 2,
+            "flexDirection": "column",
+            "justifyContent": "space-around",
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "flex": 1,
+              "flexDirection": "column",
+              "justifyContent": "space-between",
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "rgba(114, 171, 65, 1.00)",
+                "flex": 1,
+              }
+            }
+          >
+            R$ 200,00
+          </Text>
+          <Text
+            style={
+              Object {
+                "color": "rgba(59, 129, 181, 1.00)",
+                "flex": 1,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#333",
+                  "fontSize": 17,
+                  "fontWeight": "bold",
+                }
+              }
+            >
+              Total: 
+            </Text>
+            R$ 200,00
+          </Text>
+        </View>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "flexDirection": "column",
+          }
+        }
+      >
+        <TouchableOpacity
+          activeOpacity={0.2}
+          onPress={[Function]}
+          style={
+            Object {
+              "padding": 5,
+            }
+          }
+        >
+          <Icon
+            allowFontScaling={false}
+            color="rgba(0, 145, 234, 1.00)"
+            name="expand-less"
+            size={30}
+          />
+        </TouchableOpacity>
+        <Text
+          style={
+            Object {
+              "color": "rgba(59, 129, 181, 1.00)",
+              "fontWeight": "bold",
+            }
+          }
+        >
+          1
+        </Text>
+        <TouchableOpacity
+          activeOpacity={0.2}
+          disabled={true}
+          onPress={[Function]}
+          style={
+            Object {
+              "padding": 5,
+            }
+          }
+        >
+          <Icon
+            allowFontScaling={false}
+            color="rgba(0, 145, 234, 1.00)"
+            name="expand-more"
+            size={30}
+          />
+        </TouchableOpacity>
+      </View>
+    </View>
+  </View>
+</View>
+`;
