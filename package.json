@@ -15,7 +15,9 @@
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "start:clean": "yarn start --reset-cache",
     "test": "jest",
-    "test:watch": "yarn test --watch"
+    "test:watch": "yarn test --watch",
+    "relay": "relay-compiler --src ./src --exclude 'data/**' --schema src/data/schema.graphql",
+    "relay:watch": "yarn relay --watch"
   },
   "dependencies": {
     "react": "16.8.3",
@@ -27,8 +29,11 @@
     "react-navigation-material-bottom-tabs": "^1.0.0",
     "react-navigation-redux-helpers": "^3.0.0",
     "react-redux": "^6.0.1",
+    "react-relay": "^3.0.0",
     "redux": "^4.0.1",
-    "redux-logger": "^3.0.6"
+    "redux-logger": "^3.0.6",
+    "relay": "^0.8.0-1",
+    "relay-runtime": "^3.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.4.0",
@@ -36,6 +41,7 @@
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "8.2.6",
     "babel-jest": "^24.5.0",
+    "babel-plugin-relay": "^3.0.0",
     "enzyme": "3.7.0",
     "enzyme-adapter-react-16": "1.6.0",
     "enzyme-to-json": "3.3.4",
@@ -54,7 +60,8 @@
     "metro-react-native-babel-preset": "^0.53.1",
     "prettier": "1.14.3",
     "react-dom": "16.8.3",
-    "react-test-renderer": "16.8.3"
+    "react-test-renderer": "16.8.3",
+    "relay-compiler": "^3.0.0"
   },
   "jest": {
     "preset": "react-native",

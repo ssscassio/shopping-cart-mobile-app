@@ -1,0 +1,13 @@
+type Query {
+  item(id: ID!): Item
+  allItems: [Item]
+}
+
+type Item {
+  id: ID!
+  description: String
+  price: Float
+  available: Int
+  picture: String
+  title: String
+}
