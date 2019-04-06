@@ -46,7 +46,7 @@ const ProductDetails = (props: Props) => {
           text="Buy Now"
           color={colors.backgroundLight}
           onPress={() => {
-            addOneItem(item);
+            addOne(item);
             navigation.navigate('Cart');
           }}
         />
