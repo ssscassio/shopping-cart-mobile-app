@@ -52,7 +52,7 @@ const ProductItem = (props: ProductItemProps) => {
 };
 
 // Map Redux Actions Dispatchers to Component Props
-const mapDispatchToProps = (dispatch: Function => mixed) => ({
+const mapDispatchToProps = dispatch => ({
   addOne: item => dispatch(addOneItem(item)),
 });
 
