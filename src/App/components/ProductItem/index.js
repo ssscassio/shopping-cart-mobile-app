@@ -5,20 +5,23 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
-
-import type { itemType } from '../../flow/types';
+import type { ProductItemProps } from './types';
 import { addOneItem } from '../../store/actions';
 import Button from '../Button';
 import formatCurrency from '../../util';
 import styles from './styles';
 
-type Props = {
-  navigate: (item: itemType) => void,
-  item: itemType,
-  addOne: (item: itemType) => mixed,
-};
-
-const ProductItem = (props: Props) => {
+/**
+ * ProductItem component that allows user to add item to Cart
+ *
+ * @param {ProductItemProps} {
+ *   item,
+ *   navigate,
+ *   addOne
+ * }
+ * @returns <ProductItem />
+ */
+const ProductItem = (props: ProductItemProps) => {
   const { navigate, item, addOne } = props;
   const {
     item: { picture, price, title },
@@ -48,12 +51,15 @@ const ProductItem = (props: Props) => {
   );
 };
 
-const mapDispatchToProps = dispatch => ({
+// Map Redux Actions Dispatchers to Component Props
+const mapDispatchToProps = (dispatch: Function => mixed) => ({
   addOne: item => dispatch(addOneItem(item)),
 });
 
+// Export Stateless Components (To be used on Tests)
 export { ProductItem };
 
+// Connect component with store and export it as default
 export default connect(
   null,
   mapDispatchToProps

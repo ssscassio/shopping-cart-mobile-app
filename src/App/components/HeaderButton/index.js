@@ -7,55 +7,77 @@ import { Text, View, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import { connect } from 'react-redux';
 import styles from './styles';
+import type { BadgePropTypes, TotalPropTypes, HeaderPropTypes } from './types';
 import colors from '../../config/colors';
 import formatMoney from '../../util';
 
-const IconGenerator = (name: string = 'store', tintColor: string = '#fff') => (
+const IconGenerator = (name: string = 'store', tintColor: string) => (
   <Icon name={name} size={24} color={tintColor} />
 );
 
-type badgePropTypes = {
-  badgeCount: number,
-  badgeColor: string,
-  textColor: string,
-};
-const Badge = ({ badgeCount = 0, badgeColor = '#fff', textColor = '#333' }: badgePropTypes) => (
+/**
+ * Component to render a Badge that receives a badgeCount
+ * and display it inside a rounded container
+ *
+ * @param {BadgePropTypes} {
+ *   badgeCount = 0,
+ *   badgeColor = '#fff',
+ *   textColor = '#333'
+ * }
+ */
+const Badge = ({ badgeCount = 0, badgeColor = '#fff', textColor = '#333' }: BadgePropTypes) => (
   <View style={{ ...styles.badgeContainer, backgroundColor: badgeColor }}>
     <Text style={{ color: textColor }}>{badgeCount}</Text>
   </View>
 );
 
-type totalPropTypes = {
-  price: number,
-};
-const Total = ({ price = 0 }: totalPropTypes) => (
+const Total = ({ price = 0 }: TotalPropTypes) => (
   <Text style={styles.totalText}>{formatMoney(price)}</Text>
 );
 
-type HeaderPropTypes = {
-  onPress: () => mixed,
-  iconName: string,
-  tintColor: string,
-  badge: number,
-  totalPrice: number,
-  showTotal: boolean,
+/**
+ * Component to render Button on App header that
+ * receives a onPress callback and can display a icon, totalPrice and badge
+ *
+ * @param {HeaderPropTypes} {
+ *   onPress,
+ *   iconName,
+ *   tintColor = '#fff',
+ *   badge = 0,
+ *   totalPrice = 0,
+ *   showTotal = false,
+ * }
+ * @returns <HeaderButton />
+ */
+const HeaderButton = ({
+  onPress,
+  iconName,
+  tintColor = '#fff',
+  badge = 0,
+  totalPrice = 0,
+  showTotal = false,
+}: HeaderPropTypes) => (
+  <TouchableOpacity activeOpacity={0.8} style={styles.container} onPress={() => onPress()}>
+    {showTotal && <Total price={totalPrice} />}
+    {IconGenerator(iconName, tintColor)}
+    {badge !== 0 && <Badge badgeCount={badge} badgeColor={colors.secondary} textColor="#333" />}
+  </TouchableOpacity>
+);
+/** Default Props for HeaderButton */
+HeaderButton.defaultProps = {
+  badge: 0,
+  totalPrice: 0,
+  tintColor: '#fff',
+  showTotal: false,
 };
 
-const HeaderButton = (props: HeaderPropTypes) => {
-  const { onPress, iconName, tintColor, badge, totalPrice, showTotal } = props;
-  return (
-    <TouchableOpacity activeOpacity={0.8} style={styles.container} onPress={() => onPress()}>
-      {showTotal && <Total price={totalPrice} />}
-      {IconGenerator(iconName, tintColor)}
-      {badge !== 0 && <Badge badgeCount={badge} badgeColor={colors.secondary} textColor="#333" />}
-    </TouchableOpacity>
-  );
-};
-
-const mapStateToProps = state => ({
+// Map Redux States to Component Props
+const mapStateToProps = (state: Object) => ({
   badge: state.cart.itens_count,
   totalPrice: state.cart.total_price,
 });
 
+// Export Stateless Components (To be used on Tests)
 export { Badge, Total, HeaderButton };
+// Connect component with store and export it as default
 export default connect(mapStateToProps)(HeaderButton);
