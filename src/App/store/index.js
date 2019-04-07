@@ -10,6 +10,8 @@ import {
   createReduxContainer,
   createReactNavigationReduxMiddleware,
 } from 'react-navigation-redux-helpers';
+import thunkMiddleware from 'redux-thunk';
+
 import AppNavigator from '../router';
 
 // import new redux helpers
@@ -26,4 +28,4 @@ const mapStateToProps = state => ({
 
 export const AppWithNavigationState = connect(mapStateToProps)(App);
 
-export default createStore(appReducer, applyMiddleware(logger, middleware));
+export default createStore(appReducer, applyMiddleware(thunkMiddleware, logger, middleware));

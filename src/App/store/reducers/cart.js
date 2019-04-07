@@ -1,3 +1,6 @@
+import { ADD_ONE_ITEM, REMOVE_ONE_ITEM, REMOVE_FROM_CART } from '../actions/cart';
+
+// Cart Initial State
 const initialState = {
   itens_count: 0,
   total_price: 0,
@@ -6,7 +9,7 @@ const initialState = {
 
 const cart = (state = initialState, action) => {
   switch (action.type) {
-    case 'ADD_ONE_ITEM': {
+    case ADD_ONE_ITEM: {
       // Add a item to badge display
       const itensCount = state.itens_count + 1;
 
@@ -39,7 +42,7 @@ const cart = (state = initialState, action) => {
         items,
       };
     }
-    case 'REMOVE_ONE_ITEM': {
+    case REMOVE_ONE_ITEM: {
       // Remove a item to badge display
       const itensCount = state.itens_count - 1;
 
@@ -60,7 +63,7 @@ const cart = (state = initialState, action) => {
         items,
       };
     }
-    case 'REMOVE_FROM_CART': {
+    case REMOVE_FROM_CART: {
       // Calculate the new Cart item count
       const itensCount = state.itens_count - state.items[action.id].onCart;
 
