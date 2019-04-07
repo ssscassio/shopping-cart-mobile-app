@@ -1,4 +1,6 @@
 /**
+ * Test Suite for CartItem Component
+ *
  * @flow
  * @format
  * */

@@ -1,4 +1,6 @@
 /**
+ * Test Suite for Button Component
+ *
  * @flow
  * @format
  * */

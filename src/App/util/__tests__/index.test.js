@@ -1,6 +1,6 @@
 /** @format */
 
-import formatMoney from '.';
+import formatMoney from '..';
 
 test('Format BRL Currency: 2000', () => {
   expect(formatMoney(2000)).toBe('R$ 2.000,00');

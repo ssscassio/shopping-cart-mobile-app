@@ -1,4 +1,6 @@
 /**
+ * Test Suite for ProductItem Component
+ *
  * @flow
  * @format
  * */
