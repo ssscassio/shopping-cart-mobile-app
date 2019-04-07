@@ -1,23 +1,26 @@
 /**
+ * Screen to display details about a specific product
+ *
+ * @param {ProductDetailsProps} {
+ *   item,
+ *   addOne,
+ *   navigation
+ * }
+ * @returns <ProductDetails />
  * @format
  * @flow
  */
 import React from 'react';
 import { connect } from 'react-redux';
 import { View, Text, Image, ScrollView } from 'react-native';
-import { NavigationScreenProps } from 'react-navigation';
-
-import type { itemType } from '../../flow/types';
+import type { ProductDetailsProps } from './types';
 import { addOneItem } from '../../store/actions';
 import Button from '../../components/Button';
 import colors from '../../config/colors';
 import styles from './styles';
 import formatPrice from '../../util';
 
-type Props = NavigationScreenProps & {
-  addOne: (item: itemType) => mixed,
-};
-const ProductDetails = (props: Props) => {
+const ProductDetails = (props: ProductDetailsProps) => {
   const { navigation, addOne } = props;
   const item = navigation.getParam('item', 'some default value');
   const { title, picture, description, price } = item;
@@ -46,7 +49,7 @@ const ProductDetails = (props: Props) => {
           text="Buy Now"
           color={colors.backgroundLight}
           onPress={() => {
-            addOneItem(item);
+            addOne(item);
             navigation.navigate('Cart');
           }}
         />
@@ -55,12 +58,15 @@ const ProductDetails = (props: Props) => {
   );
 };
 
+// Map Redux Actions Dispatchers to Component Props
 const mapDispatchToProps = dispatch => ({
   addOne: item => dispatch(addOneItem(item)),
 });
 
+// Export Stateless Component not connected to redux store (To be used on Tests)
 export { ProductDetails };
 
+// Connect component with store and export it as default
 export default connect(
   null,
   mapDispatchToProps

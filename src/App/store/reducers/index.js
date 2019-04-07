@@ -1,4 +1,6 @@
 /**
+ * Combine all reducers
+ *
  * @format
  * @flow
  */

@@ -7,6 +7,11 @@ const returnArrayPromise = response => {
   return [];
 };
 
+/**
+ * Fetch all items on database at once
+ *
+ * @returns Promise from fetch
+ */
 function getAllItems() {
   const url = 'graphql';
   const query = `
