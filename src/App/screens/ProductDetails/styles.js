@@ -1,12 +1,20 @@
+/**
+ * Styles for ProductDetails screen
+ *
+ * @flow
+ * @format
+ * */
 import { Platform } from 'react-native';
 import colors from '../../config/colors';
 
+/* ------- Define variables to calculate the ui --------- */
 const stripHeight = 150;
 const overFlowSize = 40;
 const spectatedVerticalMargin = 50;
 const pictureHeight = stripHeight + overFlowSize;
 const topDelay = overFlowSize / 2;
 const horizontalMargin = 30;
+/* ------------------------------------------------------ */
 
 const shadowStyle = {
   shadowOpacity: 0.35,

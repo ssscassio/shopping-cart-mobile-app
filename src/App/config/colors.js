@@ -1,4 +1,6 @@
 /**
+ * Colors used over entire application
+ *
  * @format
  * @flow
  * */

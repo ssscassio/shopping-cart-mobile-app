@@ -2,7 +2,6 @@
  * @format
  * @flow
  */
-
 import { createStore, applyMiddleware } from 'redux';
 import { connect } from 'react-redux';
 import logger from 'redux-logger';

@@ -6,10 +6,10 @@ import React from 'react';
 import { Text, View, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import { connect } from 'react-redux';
-import styles from './styles';
 import type { BadgePropTypes, TotalPropTypes, HeaderPropTypes } from './types';
 import colors from '../../config/colors';
 import formatMoney from '../../util';
+import styles from './styles';
 
 const IconGenerator = (name: string = 'store', tintColor: string) => (
   <Icon name={name} size={24} color={tintColor} />

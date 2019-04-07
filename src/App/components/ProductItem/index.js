@@ -56,7 +56,7 @@ const mapDispatchToProps = dispatch => ({
   addOne: item => dispatch(addOneItem(item)),
 });
 
-// Export Stateless Components (To be used on Tests)
+// Export Stateless Component not connected to redux store (To be used on Tests)
 export { ProductItem };
 
 // Connect component with store and export it as default

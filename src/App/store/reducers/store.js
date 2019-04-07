@@ -1,4 +1,11 @@
+/**
+ * Reducers for store state
+ *
+ * @format
+ * @flow
+ */
 import { REQUEST_ALL_ITEMS, RECEIVE_ITEMS } from '../actions/store';
+import type { itemType } from '../../flow/types';
 
 // Store initial state
 const initialState = {
@@ -6,7 +13,14 @@ const initialState = {
   items: [],
 };
 
-const store = (state = initialState, action) => {
+type stateType = {
+  isFetching: boolean,
+  items: Array<itemType>,
+};
+const store = (
+  state: stateType = initialState,
+  action: { type: string, items: Array<itemType> }
+) => {
   switch (action.type) {
     case REQUEST_ALL_ITEMS: {
       return Object.assign({}, state, {
