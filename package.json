@@ -16,6 +16,7 @@
     "start:clean": "yarn start --reset-cache",
     "test": "jest",
     "test:watch": "yarn test --watch",
+    "relay:jsx": "relay-compiler --src ./src --exclude 'data/**' --schema src/data/schema.graphql --extensions js jsx",
     "relay": "relay-compiler --src ./src --exclude 'data/**' --schema src/data/schema.graphql",
     "relay:watch": "yarn relay --watch"
   },

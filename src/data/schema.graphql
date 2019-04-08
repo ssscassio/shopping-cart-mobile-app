@@ -1,6 +1,6 @@
 type Query {
   item(id: ID!): Item
-  allItems: [Item]
+  allItems(first: Int, offset: Int): [Item]
 }
 
 type Item {
