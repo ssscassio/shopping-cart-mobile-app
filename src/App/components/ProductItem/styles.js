@@ -1,3 +1,9 @@
+/**
+ * Styles for ProductItem Component
+ *
+ * @flow
+ * @format
+ * */
 import colors from '../../config/colors';
 
 const shadowStyle = {

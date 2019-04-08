@@ -67,6 +67,7 @@ const Navigation = createStackNavigator(
   }
 );
 
+// Set Status bar color on android
 if (Platform.OS === 'android') StatusBar.setBackgroundColor(colors.statusBar);
 
 export default Navigation;

@@ -34,7 +34,9 @@
     "redux": "^4.0.1",
     "redux-logger": "^3.0.6",
     "relay": "^0.8.0-1",
-    "relay-runtime": "^3.0.0"
+    "relay-runtime": "^3.0.0",
+    "redux-persist": "^5.10.0",
+    "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.4.0",
@@ -43,6 +45,7 @@
     "babel-eslint": "8.2.6",
     "babel-jest": "^24.5.0",
     "babel-plugin-relay": "^3.0.0",
+    "chai": "^4.2.0",
     "enzyme": "3.7.0",
     "enzyme-adapter-react-16": "1.6.0",
     "enzyme-to-json": "3.3.4",
