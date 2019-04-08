@@ -4,7 +4,7 @@
  */
 import React from 'react';
 import { Provider } from 'react-redux';
-import store, { AppWithNavigationState } from './store';
+import { store, AppWithNavigationState } from './store';
 
 const App = () => (
   <Provider store={store}>
