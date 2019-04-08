@@ -14,6 +14,8 @@ import {
 } from 'react-navigation-redux-helpers';
 import thunkMiddleware from 'redux-thunk';
 
+import cartMiddleware from './middlewares';
+
 import AppNavigator from '../router';
 
 import appReducer from './reducers';
@@ -38,6 +40,6 @@ export const AppWithNavigationState = connect(mapStateToProps)(App);
 
 export const store = createStore(
   persistedReducer,
-  applyMiddleware(thunkMiddleware, logger, middleware)
+  applyMiddleware(logger, thunkMiddleware, cartMiddleware, middleware)
 );
 export const persistedStore = persistStore(store);
