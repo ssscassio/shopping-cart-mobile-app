@@ -4,14 +4,14 @@
  */
 
 import { addOneItem, removeOneItem, removeFromCart } from './cart';
-import { requestAllItems, requestItem, receiveAllItems, fetchItemsIfNeeded } from './store';
+import { requestItem, fetchItemsIfNeeded, fetchItemsPage, refreshStoreList } from './store';
 
 export {
   addOneItem,
   removeOneItem,
   removeFromCart,
-  requestAllItems,
   requestItem,
-  receiveAllItems,
   fetchItemsIfNeeded,
+  fetchItemsPage,
+  refreshStoreList,
 };
