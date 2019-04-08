@@ -1,3 +1,9 @@
+/**
+ * Styles for Cart Screen
+ *
+ * @flow
+ * @format
+ * */
 import { Platform } from 'react-native';
 import colors from '../../config/colors';
 

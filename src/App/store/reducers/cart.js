@@ -1,12 +1,31 @@
+/**
+ * Reducers for cart state
+ *
+ * @format
+ * @flow
+ */
+import { ADD_ONE_ITEM, REMOVE_ONE_ITEM, REMOVE_FROM_CART } from '../actions/cart';
+import type { itemType } from '../../flow/types';
+
+// Cart Initial State
 const initialState = {
   itens_count: 0,
   total_price: 0,
   items: {},
 };
 
-const cart = (state = initialState, action) => {
+type stateType = {
+  itens_count: number,
+  total_price: number,
+  items: { [string]: itemType },
+};
+
+const cart = (
+  state: stateType = initialState,
+  action: { type: string, item: itemType, id: string }
+) => {
   switch (action.type) {
-    case 'ADD_ONE_ITEM': {
+    case ADD_ONE_ITEM: {
       // Add a item to badge display
       const itensCount = state.itens_count + 1;
 
@@ -39,7 +58,7 @@ const cart = (state = initialState, action) => {
         items,
       };
     }
-    case 'REMOVE_ONE_ITEM': {
+    case REMOVE_ONE_ITEM: {
       // Remove a item to badge display
       const itensCount = state.itens_count - 1;
 
@@ -51,7 +70,7 @@ const cart = (state = initialState, action) => {
         ...state.items,
         [action.item.id]: {
           ...state.items[action.item.id],
-          onCart: state.items[action.item.id].onCart - 1,
+          onCart: (state.items[action.item.id].onCart || 0) - 1,
         },
       };
       return {
@@ -60,13 +79,13 @@ const cart = (state = initialState, action) => {
         items,
       };
     }
-    case 'REMOVE_FROM_CART': {
+    case REMOVE_FROM_CART: {
       // Calculate the new Cart item count
-      const itensCount = state.itens_count - state.items[action.id].onCart;
+      const itensCount = state.itens_count - (state.items[action.id].onCart || 0);
 
       // Calculate the new total price removing the amount of the item removed
       const totalPrice =
-        state.total_price - state.items[action.id].onCart * state.items[action.id].price;
+        state.total_price - (state.items[action.id].onCart || 0) * state.items[action.id].price;
 
       // Create a new items object without the item with specific key(action.id)
       const items = Object.keys(state.items).reduce((object, key) => {

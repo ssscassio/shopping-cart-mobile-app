@@ -1,3 +1,9 @@
+/**
+ * Styles for Button Component
+ *
+ * @flow
+ * @format
+ * */
 import colors from '../../config/colors';
 
 export default {

@@ -1,3 +1,9 @@
+/**
+ * Styles for CartItem Component
+ *
+ * @flow
+ * @format
+ * */
 import colors from '../../config/colors';
 
 const shadowStyle = {
