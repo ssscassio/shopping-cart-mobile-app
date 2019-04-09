@@ -21,6 +21,7 @@
     "relay:watch": "yarn relay --watch"
   },
   "dependencies": {
+    "graphql": "^14.2.1",
     "react": "16.8.3",
     "react-native": "0.59.3",
     "react-native-gesture-handler": "^1.1.0",
@@ -33,10 +34,10 @@
     "react-relay": "^3.0.0",
     "redux": "^4.0.1",
     "redux-logger": "^3.0.6",
-    "relay": "^0.8.0-1",
-    "relay-runtime": "^3.0.0",
     "redux-persist": "^5.10.0",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "relay": "^0.8.0-1",
+    "relay-runtime": "^3.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.4.0",
@@ -77,7 +78,8 @@
       "enzyme-to-json/serializer"
     ],
     "transform": {
-      "^.+\\.js$": "<rootDir>/node_modules/react-native/jest/preprocessor.js"
+      "^.+\\.js$": "<rootDir>/node_modules/react-native/jest/preprocessor.js",
+      ".(graphql)$": "jest-transform-graphql"
     }
   },
   "lint-staged": {
