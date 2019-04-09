@@ -13,46 +13,29 @@
  */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { View, FlatList } from 'react-native';
-import type { ProductListProps } from 'react-navigation';
+import { View } from 'react-native';
+import type { ProductListProps } from './types';
 import type { itemType } from '../../flow/types';
 
 import { fetchItemsIfNeeded, refreshStoreList } from '../../store/actions';
-import ProductItem from '../../components/ProductItem';
+import ProductListContainer from './ProductListContainer';
 import styles from './styles';
 
 class ProductList extends Component<ProductListProps> {
-  componentDidMount() {
-    const { fetchItems, products } = this.props;
-    // Fetch Items from GraphQl API if needed
-    if (!products.length) {
-      fetchItems();
-    }
-  }
-
   navigateToDetails = (item: itemType) => {
     const { navigation } = this.props;
     navigation.navigate('ProductDetails', { item });
   };
 
-  _keyExtractor = (item: itemType): string => item.id;
-
   render() {
-    const { products, loading, fetchItems, refreshStore } = this.props;
+    const { loading, fetchItems, refreshStore } = this.props;
     return (
       <View style={styles.container}>
-        <FlatList
-          data={products}
-          refreshing={loading} // Display activity Indicator while fetching
-          onRefresh={() => {
-            refreshStore();
-            fetchItems();
-          }}
-          onEndReached={fetchItems} // Fetch items when reached end
-          keyExtractor={this._keyExtractor}
-          renderItem={({ item }) => (
-            <ProductItem item={item} navigate={this.navigateToDetails} key={item.id} />
-          )}
+        <ProductListContainer
+          fetchItems={fetchItems}
+          loading={loading}
+          refreshStore={refreshStore}
+          navigateToDetails={this.navigateToDetails}
         />
       </View>
     );
