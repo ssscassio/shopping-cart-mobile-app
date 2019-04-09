@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash 09bff200529c923213426768b863efb3
+ * @relayHash 5f18f6349f82ff38ae72e50b11b816dc
  */
 
 /* eslint-disable */
@@ -25,7 +25,7 @@ export type ProductListContainerQuery = {|
 
 /*
 query ProductListContainerQuery {
-  allItems(first: 10) {
+  allItems {
     id
     ...ProductItem_item
   }
@@ -42,21 +42,13 @@ fragment ProductItem_item on Item {
 */
 
 const node /*: ConcreteRequest*/ = (function() {
-  var v0 = [
-      {
-        kind: 'Literal',
-        name: 'first',
-        value: 10,
-        type: 'Int',
-      },
-    ],
-    v1 = {
-      kind: 'ScalarField',
-      alias: null,
-      name: 'id',
-      args: null,
-      storageKey: null,
-    };
+  var v0 = {
+    kind: 'ScalarField',
+    alias: null,
+    name: 'id',
+    args: null,
+    storageKey: null,
+  };
   return {
     kind: 'Request',
     fragment: {
@@ -70,12 +62,12 @@ const node /*: ConcreteRequest*/ = (function() {
           kind: 'LinkedField',
           alias: null,
           name: 'allItems',
-          storageKey: 'allItems(first:10)',
-          args: v0 /*: any*/,
+          storageKey: null,
+          args: null,
           concreteType: 'Item',
           plural: true,
           selections: [
-            v1 /*: any*/,
+            v0 /*: any*/,
             {
               kind: 'FragmentSpread',
               name: 'ProductItem_item',
@@ -94,12 +86,12 @@ const node /*: ConcreteRequest*/ = (function() {
           kind: 'LinkedField',
           alias: null,
           name: 'allItems',
-          storageKey: 'allItems(first:10)',
-          args: v0 /*: any*/,
+          storageKey: null,
+          args: null,
           concreteType: 'Item',
           plural: true,
           selections: [
-            v1 /*: any*/,
+            v0 /*: any*/,
             {
               kind: 'ScalarField',
               alias: null,
@@ -144,11 +136,11 @@ const node /*: ConcreteRequest*/ = (function() {
       name: 'ProductListContainerQuery',
       id: null,
       text:
-        'query ProductListContainerQuery {\n  allItems(first: 10) {\n    id\n    ...ProductItem_item\n  }\n}\n\nfragment ProductItem_item on Item {\n  picture\n  price\n  title\n  available\n  description\n  id\n}\n',
+        'query ProductListContainerQuery {\n  allItems {\n    id\n    ...ProductItem_item\n  }\n}\n\nfragment ProductItem_item on Item {\n  picture\n  price\n  title\n  available\n  description\n  id\n}\n',
       metadata: {},
     },
   };
 })();
 // prettier-ignore
-(node/*: any*/).hash = 'c466ee74d0b2dc15ca26872fec874a12';
+(node/*: any*/).hash = '59584bf8360f5f5e597537bcb60f728f';
 module.exports = node;

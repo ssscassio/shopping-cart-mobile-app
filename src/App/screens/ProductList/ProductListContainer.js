@@ -41,7 +41,7 @@ export default componentProps => (
 
 const query = graphql`
   query ProductListContainerQuery {
-    allItems(first: 10) {
+    allItems {
       id
       ...ProductItem_item
     }
