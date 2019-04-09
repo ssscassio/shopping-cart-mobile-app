@@ -7,4 +7,8 @@
 import { NavigationScreenProps } from 'react-navigation';
 
 // PropTypes for Product List screen Component
-export type ProductListProps = NavigationScreenProps & {};
+export type ProductListProps = NavigationScreenProps & {
+  loading: boolean,
+  fetchItems: () => mixed,
+  refreshStore: () => mixed,
+};

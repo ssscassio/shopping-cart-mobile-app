@@ -5,6 +5,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
+import { createFragmentContainer, graphql } from 'react-relay';
 import type { ProductItemProps } from './types';
 import { addOneItem } from '../../store/actions';
 import Button from '../Button';
@@ -27,11 +28,7 @@ const ProductItem = (props: ProductItemProps) => {
     item: { picture, price, title },
   } = props;
   return (
-    <TouchableOpacity
-      activeOpacity={0.6}
-      onPress={() => navigate(props.item)}
-      style={styles.container}
-    >
+    <TouchableOpacity activeOpacity={0.6} onPress={() => navigate(item)} style={styles.container}>
       <Image style={styles.picture} source={{ uri: picture }} />
       <View style={styles.rightContainer}>
         <Text style={styles.productTitle}>{title}</Text>
@@ -59,8 +56,24 @@ const mapDispatchToProps = dispatch => ({
 // Export Stateless Component not connected to redux store (To be used on Tests)
 export { ProductItem };
 
-// Connect component with store and export it as default
-export default connect(
+// Connect component with store
+const ProductItemConnected = connect(
   null,
   mapDispatchToProps
 )(ProductItem);
+
+// Create Relay Fragment Container and export it as default
+// eslint-disable-next-line react/display-name
+export default createFragmentContainer(
+  ProductItemConnected,
+  graphql`
+    fragment ProductItem_item on Item {
+      picture
+      price
+      title
+      available
+      description
+      id
+    }
+  `
+);
