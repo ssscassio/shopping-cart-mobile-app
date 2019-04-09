@@ -19,6 +19,9 @@
 ; Ignore metro
 .*/node_modules/metro/.*
 
+; Ignore generated files
+.*/__generated__/.*
+
 [untyped]
 .*/node_modules/react-native
 
