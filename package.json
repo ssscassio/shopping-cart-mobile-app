@@ -78,8 +78,7 @@
       "enzyme-to-json/serializer"
     ],
     "transform": {
-      "^.+\\.js$": "<rootDir>/node_modules/react-native/jest/preprocessor.js",
-      ".(graphql)$": "jest-transform-graphql"
+      "^.+\\.js$": "<rootDir>/node_modules/react-native/jest/preprocessor.js"
     }
   },
   "lint-staged": {
