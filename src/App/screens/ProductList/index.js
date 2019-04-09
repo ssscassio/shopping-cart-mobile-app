@@ -44,10 +44,7 @@ class ProductList extends Component<ProductListProps> {
         <FlatList
           data={products}
           refreshing={loading} // Display activity Indicator while fetching
-          onRefresh={() => {
-            refreshStore();
-            fetchItems();
-          }}
+          onRefresh={refreshStore}
           onEndReached={fetchItems} // Fetch items when reached end
           keyExtractor={this._keyExtractor}
           renderItem={({ item }) => (

@@ -25,6 +25,7 @@ const persistConfig = {
   key: 'root',
   storage,
   stateReconciler: autoMergeLevel2, // Merge state with two-levels deep
+  blacklist: ['store'],
 };
 const persistedReducer = persistReducer(persistConfig, appReducer);
 

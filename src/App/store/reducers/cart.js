@@ -37,12 +37,9 @@ const cart = (
       // Check if item is already in cart
       if (state.items[action.item.id]) {
         // Change onCart value form a item already in cart
-        items = {
-          ...items,
-          [action.item.id]: {
-            ...action.item,
-            onCart: items[action.item.id].onCart + 1,
-          },
+        items[action.item.id] = {
+          ...action.item,
+          onCart: items[action.item.id].onCart + 1,
         };
       } else {
         // Create a items object combining actual items with new item
@@ -66,12 +63,10 @@ const cart = (
       const totalPrice = state.total_price - action.item.price;
 
       // Change onCart value form a item already in cart and combine with other items
-      const items = {
-        ...state.items,
-        [action.item.id]: {
-          ...state.items[action.item.id],
-          onCart: (state.items[action.item.id].onCart || 0) - 1,
-        },
+      const items = { state };
+      items[action.item.id] = {
+        ...action.item,
+        onCart: (items[action.item.id].onCart || 0) - 1,
       };
       return {
         itens_count: itensCount,
